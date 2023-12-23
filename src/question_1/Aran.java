@@ -36,6 +36,47 @@ public class Aran {
     //o ‘P’ can only be followed by ‘T’ and ‘T’ can only be followed by
     //‘M’
     //o ‘B’ may or may not exists only before ‘P’
+    public static boolean isValid(String input){
+
+        //After P, only T
+        //After T, only M
+        //After M, no instruction (so any char can come after M)
+        //allow for single input
+        //B may exists only before P, so after B can only be P
+        //B may not exists only before P, so if input = BBBBP? it returns true?
+
+        int length = input.length();
+
+        if(length == 0) return false;
+
+        if(!input.matches("[BPTM]+")) return false;
+
+//        char last = input.charAt(length - 1);
+//        if(last == 'P' || last == 'T') return false;
+
+        System.out.println("in loop check");
+
+        for(int i = 0; i < length - 1; i++){
+            char prev = input.charAt(i);
+            char next = input.charAt(i + 1);
+
+            switch(prev){
+                case 'P':
+                    if(next != 'T')
+                        return false;
+                    break;
+                case 'T':
+                    if(next != 'M')
+                        return false;
+                    break;
+                case 'B':
+                    if(next != 'P')
+                        return false;
+            }
+        }
+
+        return true;
+    }
 
 
 
