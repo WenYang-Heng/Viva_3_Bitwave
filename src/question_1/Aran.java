@@ -30,6 +30,23 @@ public class Aran {
     //The level accessor(get) and mutator(set) method where jobAdvancement
     //should be adjusted accordingly too, if necessary, and restricts their
     //magnitude according to the assigned ranges.
+    public int getLevel(){
+        return level;
+    }
+
+    public void setLevel(int l){
+        if(l > -1 && l < 301){
+            this.level = l;
+            for(int i=0; i<jobAdvMap.length; i++){
+                if(this.level <= jobAdvMap[i]){
+                    this.jobAdvancement = i;
+                    break;
+                }
+            }
+        }else{
+            System.out.println("Level not in range.");
+        }
+    }
 
 
 
