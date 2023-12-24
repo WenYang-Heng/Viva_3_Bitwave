@@ -12,6 +12,11 @@ public class Aran {
     //o jobAdvancement as -1 [-1 ≤ jobAdvancement < 6]
     //o private static integer [6] jobAdvMap specifying which level
     //should Aran be initialized according to his jobAdvancement
+    public Aran(){
+        this.level=300;
+        this.jobAdvancement=-1;
+        jobAdvMap=new int[] {0,50,100,150,200,250};
+    }
 
 
 
