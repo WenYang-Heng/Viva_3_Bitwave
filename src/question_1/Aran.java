@@ -33,7 +33,7 @@ public class Aran {
         if(l > -1 && l < 301){
             this.level = l;
             for(int i=0; i<jobAdvMap.length; i++){
-                if(this.level == jobAdvMap[i]){
+                if(this.level <= jobAdvMap[i]){
                     this.jobAdvancement = i;
                     break;
                 }
