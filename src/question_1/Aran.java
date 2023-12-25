@@ -105,6 +105,12 @@ public class Aran {
     /*************** Zhen Hao ******************/
     //A toString method that returns all information as demonstrated in the
     //sample output.
+    @Override
+    public String toString() {
+        String str = "";
+        str += "Aran Info\n" + "Level: " + this.level + "\n" + "Job Adv: " + this.jobAdvancement + "\n";
+        return str;
+    }
 
 
 }
