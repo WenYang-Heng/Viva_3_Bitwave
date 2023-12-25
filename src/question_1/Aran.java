@@ -18,6 +18,18 @@ public class Aran {
     /*************** Yi Tong ******************/
     //A constructor accepting an integer parameter for jobAdvancement and
     //allocate an appropriate level according to jobAdvMap.
+    public Aran (int jobAdvancement) {
+        if (jobAdvancement == -1) {
+            this.level = 300;
+            this.jobAdvancement = jobAdvancement;
+        } else if (jobAdvancement < -1 || jobAdvancement > 5) {
+            this.level = 0;
+            this.jobAdvancement = 0;
+        } else {
+            this.jobAdvancement = jobAdvancement;
+            this.level = jobAdvMap[jobAdvancement];
+        }
+    }
 
 
 
