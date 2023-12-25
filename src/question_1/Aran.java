@@ -83,10 +83,7 @@ public class Aran {
 
         if(length == 0) return false;
 
-        if(!input.matches("[BPTM]+")) return false;
-
-        char last = input.charAt(length - 1);
-        if(last == 'B') return false;
+        if(!input.matches("[BPTM]*?[PTM]{1}$")) return false;
 
         for(int i = 0; i < length - 1; i++){
             char prev = input.charAt(i);
