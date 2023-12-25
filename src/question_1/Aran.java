@@ -48,10 +48,14 @@ public class Aran {
 
     public void setLevel(int l){
         if(l > -1 && l < 301){
-            this.level = l;
+            level = l;
+            if(level >= jobAdvMap[jobAdvMap.length - 1]){
+                jobAdvancement = jobAdvMap.length - 1;
+                return;
+            }
             for(int i=0; i<jobAdvMap.length; i++){
-                if(this.level <= jobAdvMap[i]){
-                    this.jobAdvancement = i;
+                if(l < jobAdvMap[i]){
+                    jobAdvancement = i - 1;
                     break;
                 }
             }
@@ -83,7 +87,7 @@ public class Aran {
 
         if(length == 0) return false;
 
-        if(!input.matches("[BPTM]*?[PTM]{1}$")) return false;
+        if(!input.matches("^[BPTM]*?[PTM]{1}$")) return false;
 
         for(int i = 0; i < length - 1; i++){
             char prev = input.charAt(i);
